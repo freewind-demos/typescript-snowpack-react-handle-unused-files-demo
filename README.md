@@ -1,13 +1,22 @@
-TypeScript Snowpack React Demo
+TypeScript Snowpack React Handle Unused Files Demo
 =================================
 
-使用snowpack来开发react，体验不错，配置简单、速度快、fast refresh
-
-注意：导入文件时大小写一定要完全匹配，否则修改后不生效，卡了几个小时
+项目中如果某些文件（比如`src/unusedFileHasNode.ts`）未被使用到，只要存在于项目中且没有显式exclude，则`snowpack dev`也会尝试对它进行处理，有时候不太方便。
 
 ```
 npm install
 npm run demo
 ```
 
-It will open page on browser automatically.
+会报错：
+
+```
+snowpack
+
+▼ Console
+
+[snowpack] ! building dependencies...
+[snowpack] Package "path" not found. Have you installed it? 
+
+error Command failed with exit code 1.
+```
